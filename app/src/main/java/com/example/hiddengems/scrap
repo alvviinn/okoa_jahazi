@@ -1,0 +1,107 @@
+
+     val currentuser = FirebaseAuth.getInstance().currentUser
+        if (currentuser != null){
+            var gotoregister = Intent(this, RegisterActivity::class.java)
+            startActivity(gotoregister)
+            Toast.makeText(this, "No existing account", Toast.LENGTH_SHORT).show()
+
+        }else {
+            var gotomain = Intent(this, MainActivity::class.java)
+            startActivity(gotomain)
+
+            Toast.makeText(this, "Existing account logged in", Toast.LENGTH_SHORT).show()
+        }
+
+        }
+
+
+
+            var name = edtaddname.text.toString().trim()
+            var contacts= edtaddcontacts.text.toString().trim()
+            var location = edtaddlocation.text.toString().trim()
+            var description = edtadddescription.text.toString().trim()
+
+            var time_id = System.currentTimeMillis().toString()
+
+            //progress bar
+            var progress = ProgressDialog(this)
+            progress.setTitle("Saving Data")
+            progress.setMessage("Please Wait")
+
+            if (name.isEmpty() or contacts.isEmpty() or location.isEmpty() or description.isEmpty()){
+                Toast.makeText(this, "Cannot Submit Empty Field", Toast.LENGTH_SHORT).show()}
+            else{
+
+                var my_child = FirebaseDatabase.getInstance().reference.child("Names/"+time_id)
+                var user_data = Hangout(name,contacts,location,description,time_id)
+
+                progress.show()
+                //save data
+                my_child.setValue(user_data).addOnCompleteListener{
+
+                    if(it.isSuccessful){
+                        Toast.makeText(this, "Hangout uploaded Successfully", Toast.LENGTH_SHORT).show()
+
+                        var gotoview = Intent(this,View_Activity::class.java)
+                        startActivity(gotoview)
+
+
+                    }else{
+                        Toast.makeText(this, "Failed to Upload Hangout", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+
+
+
+
+            }
+
+                // on below line creating a function to upload our image.
+                fun uploadImage() {
+                    // on below line checking weather our file uri is null or not.
+                    if (fileUri != null) {
+                        // on below line displaying a progress dialog when uploading an image.
+                        val progressDialog = ProgressDialog(this)
+                        // on below line setting title and message for our progress dialog and displaying our progress dialog.
+                        progressDialog.setTitle("Uploading...")
+                        progressDialog.setMessage("Uploading your image..")
+                        progressDialog.show()
+
+                        // on below line creating a storage refrence for firebase storage and creating a child in it with
+                        // random uuid.
+                        val ref: StorageReference = FirebaseStorage.getInstance().getReference()
+                            .child(UUID.randomUUID().toString())
+                        // on below line adding a file to our storage.
+                        ref.putFile(fileUri!!).addOnSuccessListener {
+                            // this method is called when file is uploaded.
+                            // in this case we are dismissing our progress dialog and displaying a toast message
+                            progressDialog.dismiss()
+                            Toast.makeText(applicationContext, "Image Uploaded..", Toast.LENGTH_SHORT).show()
+                        }.addOnFailureListener {
+                            // this method is called when there is failure in file upload.
+                            // in this case we are dismissing the dialog and displaying toast message
+                            progressDialog.dismiss()
+                            Toast.makeText(applicationContext, "Fail to Upload Image..", Toast.LENGTH_SHORT)
+                                .show()
+                        }
+                    }
+                }
+
+
+   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
+            if(data == null || data.data == null){
+                return
+            }
+
+            fileUri = data.data
+            try {
+                val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, fileUri)
+                addimgview.setImageBitmap(bitmap)
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        }
+    }
