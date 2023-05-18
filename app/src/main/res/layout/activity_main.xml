@@ -118,13 +118,14 @@
                 app:layout_constraintStart_toStartOf="@+id/textView6"
                 app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
-            <AdapterViewFlipper
+            <FrameLayout
                 android:id="@+id/Adapter_flipper_home"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
+                android:background="@drawable/inked"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/cardView2"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -244,16 +245,16 @@
                         </LinearLayout>
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
                             android:layout_gravity="right"
                             android:layout_margin="10dp"
                             app:cardCornerRadius="48dp">
 
                             <ImageView
                                 android:id="@+id/imageView9"
-                                android:layout_width="32dp"
-                                android:layout_height="32dp"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 app:srcCompat="@drawable/baseline_star_rate_24" />
                         </androidx.cardview.widget.CardView>
@@ -304,16 +305,16 @@
                         </LinearLayout>
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
                             android:layout_gravity="right"
                             android:layout_margin="10dp"
                             app:cardCornerRadius="48dp">
 
                             <ImageView
                                 android:id="@+id/imageView9"
-                                android:layout_width="32dp"
-                                android:layout_height="32dp"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 app:srcCompat="@drawable/baseline_star_rate_24" />
                         </androidx.cardview.widget.CardView>
@@ -365,16 +366,16 @@
                         </LinearLayout>
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
                             android:layout_gravity="right"
                             android:layout_margin="10dp"
                             app:cardCornerRadius="48dp">
 
                             <ImageView
                                 android:id="@+id/imageView9"
-                                android:layout_width="32dp"
-                                android:layout_height="32dp"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 app:srcCompat="@drawable/baseline_star_rate_24" />
                         </androidx.cardview.widget.CardView>
@@ -431,16 +432,16 @@
                         </LinearLayout>
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
                             android:layout_gravity="right"
                             android:layout_margin="10dp"
                             app:cardCornerRadius="48dp">
 
                             <ImageView
                                 android:id="@+id/imageView9"
-                                android:layout_width="32dp"
-                                android:layout_height="32dp"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 app:srcCompat="@drawable/baseline_star_rate_24" />
                         </androidx.cardview.widget.CardView>
@@ -491,16 +492,16 @@
                         </LinearLayout>
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
                             android:layout_gravity="right"
                             android:layout_margin="10dp"
                             app:cardCornerRadius="48dp">
 
                             <ImageView
                                 android:id="@+id/imageView9"
-                                android:layout_width="32dp"
-                                android:layout_height="32dp"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 app:srcCompat="@drawable/baseline_star_rate_24" />
                         </androidx.cardview.widget.CardView>
@@ -551,16 +552,16 @@
                         </LinearLayout>
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
                             android:layout_gravity="right"
                             android:layout_margin="10dp"
                             app:cardCornerRadius="48dp">
 
                             <ImageView
                                 android:id="@+id/imageView9"
-                                android:layout_width="32dp"
-                                android:layout_height="32dp"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 app:srcCompat="@drawable/baseline_star_rate_24" />
                         </androidx.cardview.widget.CardView>
